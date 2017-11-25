@@ -2,7 +2,11 @@
 
 Here, I perform a brief graphical analysis of my family's home power consumption, using data collected by our power company, Southern California Edison (SCE). 
 
-Every 15 minutes, SCE measures the amount of energy consumed by our household (in kWh) over that 15-minute interval. By dividing each of these measurements by 15 minutes (0.25 hour), we can obtain the average power consumed during each 15-minute window. Power, i.e. the _rate of energy consumption_, is a sensible quantity to plot against time because we can calculate the energy consumed during a given interval of time by integrating the power curve over that interval. To get a sense of the trends present in our electricity consumption, as well as smooth out some of the noise in the data, we can plot a [_moving average_](https://en.wikipedia.org/wiki/Moving_average). The particular form of moving average I chose to use is an [exponentially weighted average](https://en.wikipedia.org/wiki/EWMA_chart) of the following form: v<sub>t</sub> = βv<sub>t-1</sub> + (1 - β)θ<sub>t</sub>, where **θ** is the list of raw measurements, β is a bias representing the smootheness of the averaging procedure, and **v** is the new smoothed list of measurements. Below, I have plotted the raw data in red, a short-term average in blue (β = 0.9), and a long-term average in gray (β = 0.999).  
+Every 15 minutes, SCE measures the amount of energy consumed by our household (in kWh) over that 15-minute interval. By dividing each of these measurements by 15 minutes (0.25 hour), we can obtain the average power consumed during each 15-minute window. Power, i.e. the _rate of energy consumption_, is a sensible quantity to plot against time because we can calculate the energy consumed during a given interval of time by integrating the power curve over that interval. To get a sense of the trends present in our electricity consumption, as well as smooth out some of the noise in the data, we can plot a [_moving average_](https://en.wikipedia.org/wiki/Moving_average). The particular form of moving average I chose to use is an [exponentially weighted average](https://en.wikipedia.org/wiki/EWMA_chart) of the following form: 
+
+<p align="center">v<sub>t</sub> = βv<sub>t-1</sub> + (1 - β)θ<sub>t</sub> , </p>
+
+where **θ** is the list of raw measurements, β is a bias representing the smootheness of the averaging procedure, and **v** is the new smoothed list of measurements. Below, I have plotted the raw data in red, a short-term average in blue (β = 0.9), and a long-term average in gray (β = 0.999).  
 
 ![plot-1]
 
