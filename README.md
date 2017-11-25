@@ -1,6 +1,6 @@
 # Analysis of Electricity Consumption (using Moving Averages)
 
-Here, I perform a brief graphical analysis of my family's home power consumption, using data collected by our power company, Southern California Edison (SCE). 
+Here, I perform a brief graphical analysis of my family's home power consumption, using data I downloaded as a CSV file from our power company, Southern California Edison (SCE). 
 
 Every 15 minutes, SCE measures the amount of energy consumed by our household (in kWh) over that 15-minute interval. By dividing each of these measurements by 15 minutes (0.25 hour), we can obtain the average power consumed during each 15-minute window. Power, i.e. the _rate of energy consumption_, is a sensible quantity to plot against time because we can calculate the energy consumed during a given interval of time by integrating the power curve over that interval. To get a sense of the trends present in our electricity consumption, as well as smooth out some of the noise in the data, we can plot a [_moving average_](https://en.wikipedia.org/wiki/Moving_average). The particular form of moving average I chose to use is an [exponentially weighted average](https://en.wikipedia.org/wiki/EWMA_chart) of the following form: 
 
