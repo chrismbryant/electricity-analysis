@@ -1,4 +1,4 @@
-﻿# Analysis of Electricity Consumption (using Moving Averages)
+# Analysis of Electricity Consumption (using Moving Averages)
 
 Here, I perform a brief graphical analysis of my family's household power consumption, using data I downloaded as a CSV file from our power company, Southern California Edison (SCE). 
 
